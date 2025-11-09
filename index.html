@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ورتل القران ترتيلا</title>
+  <link rel="icon" href="قران كريم.jpg">
+  <link rel="stylesheet" href="css.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      background-color: black;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .reader {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+}
+.reader img {
+  width: 120px;
+  border-radius: 10px;
+}
+#adBox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#adBox .content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+  </style>
+</head>
+
+<header>
+  <div>
+    <img src="صور-مكتوب-عليها-قرآن-كريم-للأنستقرام.jpg">
+  </div>
+  <div>
+    <p class="header-header">ورتل القران ترتيلا</p>
+  </div>
+</header>
+
+
+  <body>
+
+<div class="game-box-1111">
+<div class="reader" onclick="showAd('ياسر الدوسري.mp3')">
+  <img src="ياسر الدوسري.jpg" alt="القارئ">
+  <p class="pp">ياسر الدوسري</p>
+</div>
+
+</div>
+
+<div id="adBox">
+  <div class="content">
+    <p>🔊 إعلان قصير قبل التحميل...</p>
+    <p>سيبدأ التحميل خلال <span id="countdown">5</span> ثوانٍ</p>
+  </div>
+</div>
+
+
+<script>
+function showAd(audioUrl) {
+  const adBox = document.getElementById('adBox');
+  const countdown = document.getElementById('countdown');
+  adBox.style.display = 'flex';
+  let seconds = 5; // مدة الإعلان بالثواني
+  countdown.textContent = seconds;
+
+  const timer = setInterval(() => {
+    seconds--;
+    countdown.textContent = seconds;
+    if (seconds <= 0) {
+      clearInterval(timer);
+      adBox.style.display = 'none';
+      // بدء التحميل
+      const link = document.createElement('a');
+      link.href = audioUrl;
+      link.download = '';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+  }, 1000);
+}
+</script>
+
+
